@@ -57,7 +57,7 @@ function clearProducts() {
     nextProduct = 2;
     // document.getElementById("bt-compare").style.display = "none";
     document.getElementById("bt-clear").style.display = "none";
-    document.getElementById("result").innerHTML = null;
+    // document.getElementById("result").innerHTML = null;
   }
 }
 
@@ -103,5 +103,5 @@ function comparePrices() {
     msg = "המוצר המשתלם ביותר הוא מוצר " + productNum;
     fieldsets[productNum - 1].setAttribute("class", "product-fieldset green");
   }
-  document.getElementById("result").innerHTML = msg;
+  //document.getElementById("result").innerHTML = msg;
 }
