@@ -3,11 +3,11 @@ body {
   direction: rtl;
   margin: 0;
   height: 100%;
-  font-size: x-large;
+  font-size: larger;
 }
 input,
 button {
-  font-size: x-large;
+  font-size: large;
 }
 
 fieldset {
@@ -16,7 +16,7 @@ fieldset {
 }
 
 fieldset label {
-  width: 100px;
+  width: 130px;
   display: inline-block;
   margin-bottom: 10px;
 }
