@@ -1,0 +1,68 @@
+html,
+body {
+  direction: rtl;
+  margin: 0;
+  height: 100%;
+  font-size: large;
+}
+
+fieldset {
+  width: fit-content;
+  margin-bottom: 5px;
+}
+
+fieldset label {
+  width: 100px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+div#result {
+  font-size: xx-large;
+}
+div.price-100gr {
+  font-weight: bold;
+}
+.green {
+  background-color: palegreen;
+}
+div#products {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* grid */
+section {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  box-sizing: border-box;
+  height: 100%;
+  border: 1px solid lightgrey;
+  padding: 10px;
+}
+
+header {
+  grid-column: span 12;
+  grid-row: span 2;
+  /* border: inherit; */
+  text-align: center;
+}
+aside {
+  grid-column: span 3;
+  grid-row: span 17;
+  border: inherit;
+  overflow: auto;
+}
+main {
+  grid-column: span 9;
+  grid-row: span 17;
+  border: inherit;
+  overflow: auto;
+}
+footer {
+  grid-column: span 12;
+  grid-row: span 1;
+  /* border: inherit; */
+  text-align: center;
+}
