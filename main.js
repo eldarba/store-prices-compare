@@ -46,6 +46,9 @@ function clearProducts() {
         // document.getElementById("bt-compare").style.display = "none";
         document.getElementById("bt-clear").style.display = "none";
         // document.getElementById("result").innerHTML = null;
+        document.getElementById("in-price-1").value = null;
+        document.getElementById("in-weight-1").value = null;
+        document.getElementsByClassName("price-100gr")[0].innerHTML = null;
     }
 }
 
