@@ -49,6 +49,7 @@ function clearProducts() {
         document.getElementById("in-price-1").value = null;
         document.getElementById("in-weight-1").value = null;
         document.getElementsByClassName("price-100gr")[0].innerHTML = null;
+        document.getElementsByClassName("product-container")[0].setAttribute("class", "product-container");
     }
 }
 
