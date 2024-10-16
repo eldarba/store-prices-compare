@@ -8,7 +8,7 @@ body {
 }
 input,
 button {
-  font-size: 1rem;
+  font-size: 2rem;
 }
 
 h1{
@@ -20,11 +20,6 @@ fieldset {
   margin-bottom: 5px;
 }
 
-fieldset label {
-  width: 130px;
-  display: inline-block;
-  margin-bottom: 10px;
-}
 
 div.price-100gr {
   font-weight: bold;
