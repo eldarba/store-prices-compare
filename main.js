@@ -17,10 +17,10 @@ function addProduct() {
     let span = document.createElement("span");
     span.innerHTML = " ₪";
     div.appendChild(span);
-    
+
     // Add a line break
     div.appendChild(document.createElement("br"));
-    
+
     // Create and append weight input element
     let weightInput = document.createElement("input");
     weightInput.setAttribute("id", "in-weight-" + nextProduct);
@@ -32,15 +32,15 @@ function addProduct() {
     span = document.createElement("span");
     span.innerHTML = " gr";
     div.appendChild(span);
-    
+
     // Create a div element (price per 100gr)
     let price100GrDiv = document.createElement("div");
     price100GrDiv.setAttribute("class", "price-100gr");
     div.appendChild(price100GrDiv);
-    
+
     // Append the created product container to the products container
     document.getElementById("products").appendChild(div);
-    
+
     nextProduct++;
     document.getElementById("bt-clear").style.display = null;
     priceInput.focus();
@@ -82,8 +82,6 @@ function comparePrices() {
         let inputs = productDiv.getElementsByTagName("input");
         let price = inputs[0].value;
         let weight = inputs[1].value;
-        console.log("price: " + price);
-        console.log("weight: " + weight);
         let pricePer100Gr = (price / weight) * 100;
         if (pricePer100Gr < bestPricePer100Gr) {
             bestPricePer100Gr = pricePer100Gr;
@@ -91,15 +89,25 @@ function comparePrices() {
             productNum = arr[arr.length - 1];
         }
     }
-    //   console.log(productNum);
     let msg;
     if (productNum == 0) {
         msg = "אין מחירים להשוואה";
     } else {
         msg = "המוצר המשתלם ביותר הוא מוצר " + productNum;
         products[productNum - 1].setAttribute("class", "product-container green");
+        console.log(products);
+        for (let i = 0; i < products.length; i++) {
+            const product = products[i];
+            let inputs = product.getElementsByTagName("input");
+            let price = inputs[0].value;
+            let weight = inputs[1].value;
+            let pricePer100Gr = (price / weight) * 100;
+            if (pricePer100Gr === bestPricePer100Gr) {
+                product.setAttribute("class", "product-container green");
+            }
+        }
+        //document.getElementById("result").innerHTML = msg;
     }
-    //document.getElementById("result").innerHTML = msg;
 }
 
 function checkForAddProduct(event) {
