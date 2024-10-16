@@ -12,6 +12,7 @@ function addProduct() {
     priceInput.setAttribute("step", "0.10");
     priceInput.setAttribute("placeholder", "הכנס מחיר בשקלים");
     priceInput.setAttribute("oninput", "calculatePrice(this);comparePrices()");
+    priceInput.setAttribute("onkeydown", "checkForAddProduct(event)");
     div.appendChild(priceInput);
     
     // Add a line break
@@ -23,6 +24,7 @@ function addProduct() {
     weightInput.setAttribute("type", "number");
     weightInput.setAttribute("placeholder", "הכנס משקל בגרם");
     weightInput.setAttribute("oninput", "calculatePrice(this);comparePrices()");
+    weightInput.setAttribute("onkeydown", "checkForAddProduct(event)");
     div.appendChild(weightInput);
     
     // Create a div element (price per 100gr)
