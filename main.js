@@ -4,7 +4,7 @@ function addProduct() {
     
     let div = document.createElement("div");
     div.setAttribute("class", "product-container");
-    div.appendChild(document.createElement("hr"));
+    // div.appendChild(document.createElement("hr"));
     // Create and append price label and input elements
     
 
