@@ -12,17 +12,15 @@
 
 <body>
     <section>
-      
+
         <main>
-            <fieldset class="product-fieldset">
-                <legend>מוצר 1</legend>
-                <label for="in-price-1">מחיר בשקלים</label><input id="in-price-1" type="number" step="0.10"
-                    placeholder="הכנס מחיר בשקלים" oninput="calculatePrice(this);comparePrices()" />
-                <br />
-                <label for="in-weight-1">משקל בגרם</label><input id="in-weight-1" type="number"
-                    placeholder="הכנס משקל בגרם" oninput="calculatePrice(this)" />
-                <div class="price-100gr"></div>
-            </fieldset>
+            <label for="in-price-1">מחיר בשקלים</label><input id="in-price-1" type="number" step="0.10"
+                placeholder="הכנס מחיר בשקלים" oninput="calculatePrice(this);comparePrices()" />
+            <br />
+            <label for="in-weight-1">משקל בגרם</label><input id="in-weight-1" type="number" placeholder="הכנס משקל בגרם"
+                oninput="calculatePrice(this)" />
+            <div class="price-100gr"></div>
+            <!-- <hr> -->
 
             <div id="products"></div>
             <hr />
