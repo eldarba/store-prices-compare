@@ -30,7 +30,7 @@ function addProduct() {
     weightInput.setAttribute("onkeydown", "checkForAddProduct(event)");
     div.appendChild(weightInput);
     span = document.createElement("span");
-    span.innerHTML = " גרם";
+    span.innerHTML = " gr";
     div.appendChild(span);
     
     // Create a div element (price per 100gr)
