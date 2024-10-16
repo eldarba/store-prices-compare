@@ -36,5 +36,12 @@ div.product-container {
 
 .product-container>input {
     margin-bottom: 10px;
-    width: 100%;
+    width: 95%;
+}
+
+.product-container>.currency::after {
+    content: "₪" !important;
+}
+.product-container>.gram::after {
+    content: "גרם" !important;
 }

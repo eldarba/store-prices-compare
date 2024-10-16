@@ -14,6 +14,9 @@ function addProduct() {
     priceInput.setAttribute("oninput", "calculatePrice(this);comparePrices()");
     priceInput.setAttribute("onkeydown", "checkForAddProduct(event)");
     div.appendChild(priceInput);
+    let span = document.createElement("span");
+    span.innerHTML = " ₪";
+    div.appendChild(span);
     
     // Add a line break
     div.appendChild(document.createElement("br"));
@@ -26,6 +29,9 @@ function addProduct() {
     weightInput.setAttribute("oninput", "calculatePrice(this);comparePrices()");
     weightInput.setAttribute("onkeydown", "checkForAddProduct(event)");
     div.appendChild(weightInput);
+    span = document.createElement("span");
+    span.innerHTML = " גרם";
+    div.appendChild(span);
     
     // Create a div element (price per 100gr)
     let price100GrDiv = document.createElement("div");

@@ -14,13 +14,19 @@
     <main>
         <div class="product-container">
 
+            <!-- <div class="currency"> -->
             <input id="in-price-1" type="number" step="0.10" placeholder="הכנס מחיר בשקלים"
                 oninput="calculatePrice(this);comparePrices()" onkeydown="checkForAddProduct(event)" />
+            <span>₪</span>
+            <!-- </div> -->
 
             <br />
 
+            <!-- <div class="gram"> -->
             <input id="in-weight-1" type="number" placeholder="הכנס משקל בגרם" oninput="calculatePrice(this)"
                 onkeydown="checkForAddProduct(event)" />
+            <span>גרם</span>
+            <!-- </div> -->
 
             <div class="price-100gr"></div>
         </div>
