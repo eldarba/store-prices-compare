@@ -49,24 +49,10 @@ section {
   /* padding: 3px; */
 }
 
-x
-header {
-  grid-column: span 12;
-  grid-row: span 2;
-  /* border: inherit; */
-  text-align: center;
-}
 
 main {
   grid-column: span 12;
-  grid-row: span 27;
+  grid-row: span 30;
   border: inherit;
   overflow: auto;
-}
-footer {
-  grid-column: span 12;
-  grid-row: span 1;
-  /* border: inherit; */
-  text-align: center;
-  font-size: medium;
 }
