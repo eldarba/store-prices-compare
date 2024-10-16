@@ -11,31 +11,30 @@
 </head>
 
 <body>
-    <section>
-        <main>
-            <div class="product-container">
-                <input id="in-price-1" type="number" step="0.10"
-                placeholder="הכנס מחיר בשקלים" oninput="calculatePrice(this);comparePrices()" />
-                <br />
-                <input id="in-weight-1" type="number" placeholder="הכנס משקל בגרם"
-                oninput="calculatePrice(this)" />
-                <div class="price-100gr"></div>
-            </div>
-            <!-- <hr> -->
+    <main>
+        <div class="product-container">
 
-            <div id="products"></div>
-            <hr />
-            <div>
-                <button onclick="addProduct()">הוסף מוצר להשוואה</button>
-                <button id="bt-clear" style="display: none" onclick="clearProducts()">
-                    נקה מוצרים
-                </button>
-            </div>
+            <input id="in-price-1" type="number" step="0.10" placeholder="הכנס מחיר בשקלים"
+                oninput="calculatePrice(this);comparePrices()" onkeydown="checkForAddProduct(event)" />
 
-            </div>
-        </main>
+            <br />
 
-    </section>
+            <input id="in-weight-1" type="number" placeholder="הכנס משקל בגרם" oninput="calculatePrice(this)"
+                onkeydown="checkForAddProduct(event)" />
+
+            <div class="price-100gr"></div>
+        </div>
+
+        <div id="products"></div>
+        <div>
+            <button onclick="addProduct()">הוסף מוצר להשוואה</button>
+            <button id="bt-clear" style="display: none" onclick="clearProducts()">
+                נקה מוצרים
+            </button>
+        </div>
+
+    </main>
+
     <script src="main.js"></script>
 </body>
 

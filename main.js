@@ -1,51 +1,48 @@
 let nextProduct = 2;
 
 function addProduct() {
-    
+    // create div container for a product box
     let div = document.createElement("div");
     div.setAttribute("class", "product-container");
-    // div.appendChild(document.createElement("hr"));
-    // Create and append price label and input elements
-    
 
-    var priceInput = document.createElement("input");
+    // Create and append price input element
+    let priceInput = document.createElement("input");
     priceInput.setAttribute("id", "in-price-" + nextProduct);
     priceInput.setAttribute("type", "number");
     priceInput.setAttribute("step", "0.10");
     priceInput.setAttribute("placeholder", "הכנס מחיר בשקלים");
     priceInput.setAttribute("oninput", "calculatePrice(this);comparePrices()");
     div.appendChild(priceInput);
-
+    
     // Add a line break
     div.appendChild(document.createElement("br"));
-
-    // Create and append weight label and input elements
-   
-    var weightInput = document.createElement("input");
+    
+    // Create and append weight input element
+    let weightInput = document.createElement("input");
     weightInput.setAttribute("id", "in-weight-" + nextProduct);
     weightInput.setAttribute("type", "number");
     weightInput.setAttribute("placeholder", "הכנס משקל בגרם");
     weightInput.setAttribute("oninput", "calculatePrice(this);comparePrices()");
     div.appendChild(weightInput);
-
+    
     // Create a div element (price per 100gr)
-    var price100GrDiv = document.createElement("div");
+    let price100GrDiv = document.createElement("div");
     price100GrDiv.setAttribute("class", "price-100gr");
     div.appendChild(price100GrDiv);
-
-    // Append the created fieldset to the document body (or another desired container)
+    
+    // Append the created product container to the products container
     document.getElementById("products").appendChild(div);
+    
     nextProduct++;
     document.getElementById("bt-clear").style.display = null;
+    priceInput.focus();
 }
 
 function clearProducts() {
     if (confirm("פעולה זאת תמחק את כל המוצרים")) {
         document.getElementById("products").innerHTML = null;
         nextProduct = 2;
-        // document.getElementById("bt-compare").style.display = "none";
         document.getElementById("bt-clear").style.display = "none";
-        // document.getElementById("result").innerHTML = null;
         document.getElementById("in-price-1").value = null;
         document.getElementById("in-weight-1").value = null;
         document.getElementsByClassName("price-100gr")[0].innerHTML = null;
@@ -54,28 +51,27 @@ function clearProducts() {
 }
 
 function calculatePrice(inputEl) {
-    let fs = inputEl.parentNode;
-    let inputs = fs.getElementsByTagName("input");
+    let productContainer = inputEl.parentNode;
+    let inputs = productContainer.getElementsByTagName("input");
     let price = +inputs[0].value;
     let weight = +inputs[1].value;
-    let priceDiv = fs.getElementsByTagName("div")[0];
+    let priceDiv = productContainer.getElementsByTagName("div")[0];
     if (weight == 0 || isNaN(price) || isNaN(weight)) {
         priceDiv.innerHTML = null;
         return;
     }
     let pricePer100Gr = ((price / weight) * 100).toFixed(2);
-
     priceDiv.innerHTML = "מחיר למאה גרם " + pricePer100Gr + ' ש"ח';
 }
 
 function comparePrices() {
     let bestPricePer100Gr = 9999999999;
     let productNum = 0;
-    let fieldsets = document.getElementsByClassName("product-container");
-    for (let i = 0; i < fieldsets.length; i++) {
-        const fieldset = fieldsets[i];
-        fieldset.setAttribute("class", "product-container");
-        let inputs = fieldset.getElementsByTagName("input");
+    let products = document.getElementsByClassName("product-container");
+    for (let i = 0; i < products.length; i++) {
+        const productDiv = products[i];
+        productDiv.setAttribute("class", "product-container");
+        let inputs = productDiv.getElementsByTagName("input");
         let price = inputs[0].value;
         let weight = inputs[1].value;
         console.log("price: " + price);
@@ -93,7 +89,22 @@ function comparePrices() {
         msg = "אין מחירים להשוואה";
     } else {
         msg = "המוצר המשתלם ביותר הוא מוצר " + productNum;
-        fieldsets[productNum - 1].setAttribute("class", "product-container green");
+        products[productNum - 1].setAttribute("class", "product-container green");
     }
     //document.getElementById("result").innerHTML = msg;
+}
+
+function checkForAddProduct(event) {
+    if (event.key === "Enter" || event.keyCode === 13) {
+        if (event.target.value != "") {
+            let productContainer = event.target.parentNode;
+            let inputs = productContainer.getElementsByTagName("input");
+            let price = +inputs[0].value;
+            let weight = +inputs[1].value;
+            if (price != "" && weight != "") {
+                addProduct();
+            }
+
+        }
+    }
 }
