@@ -13,12 +13,14 @@
 <body>
     <section>
         <main>
-            <input id="in-price-1" type="number" step="0.10"
+            <div class="product-container">
+                <input id="in-price-1" type="number" step="0.10"
                 placeholder="הכנס מחיר בשקלים" oninput="calculatePrice(this);comparePrices()" />
-            <br />
-            <input id="in-weight-1" type="number" placeholder="הכנס משקל בגרם"
+                <br />
+                <input id="in-weight-1" type="number" placeholder="הכנס משקל בגרם"
                 oninput="calculatePrice(this)" />
-            <div class="price-100gr"></div>
+                <div class="price-100gr"></div>
+            </div>
             <!-- <hr> -->
 
             <div id="products"></div>

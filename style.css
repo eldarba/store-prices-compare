@@ -29,6 +29,7 @@ fieldset label {
 div.price-100gr {
   font-weight: bold;
 }
+
 .green {
   background-color: palegreen;
 }
@@ -55,4 +56,8 @@ main {
   grid-row: span 30;
   border: inherit;
   overflow: auto;
+}
+
+div.product-container{
+    padding: 10px;
 }

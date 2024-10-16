@@ -2,8 +2,9 @@ let nextProduct = 2;
 
 function addProduct() {
     
-    let div = document.createElement("div")
-    div.appendChild(document.createElement("hr"))
+    let div = document.createElement("div");
+    div.setAttribute("class", "product-container");
+    div.appendChild(document.createElement("hr"));
     // Create and append price label and input elements
     
 
@@ -66,15 +67,15 @@ function calculatePrice(inputEl) {
 function comparePrices() {
     let bestPricePer100Gr = 9999999999;
     let productNum = 0;
-    let fieldsets = document.getElementsByTagName("fieldset");
+    let fieldsets = document.getElementsByClassName("product-container");
     for (let i = 0; i < fieldsets.length; i++) {
         const fieldset = fieldsets[i];
-        fieldset.setAttribute("class", "product-fieldset");
+        fieldset.setAttribute("class", "product-container");
         let inputs = fieldset.getElementsByTagName("input");
         let price = inputs[0].value;
         let weight = inputs[1].value;
-        // console.log("price: " + price);
-        // console.log("weight: " + weight);
+        console.log("price: " + price);
+        console.log("weight: " + weight);
         let pricePer100Gr = (price / weight) * 100;
         if (pricePer100Gr < bestPricePer100Gr) {
             bestPricePer100Gr = pricePer100Gr;
@@ -88,7 +89,7 @@ function comparePrices() {
         msg = "אין מחירים להשוואה";
     } else {
         msg = "המוצר המשתלם ביותר הוא מוצר " + productNum;
-        fieldsets[productNum - 1].setAttribute("class", "product-fieldset green");
+        fieldsets[productNum - 1].setAttribute("class", "product-container green");
     }
     //document.getElementById("result").innerHTML = msg;
 }
