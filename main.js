@@ -19,7 +19,7 @@ function addProduct() {
   var priceInput = document.createElement("input");
   priceInput.setAttribute("id", "in-price-" + nextProduct);
   priceInput.setAttribute("type", "number");
-  priceInput.setAttribute("step", "0.01");
+  priceInput.setAttribute("step", "0.10");
   priceInput.setAttribute("placeholder", "הכנס מחיר בשקלים");
   priceInput.setAttribute("oninput", "calculatePrice(this);comparePrices()");
   fieldset.appendChild(priceInput);

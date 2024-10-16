@@ -32,9 +32,10 @@ div.price-100gr {
 .green {
   background-color: palegreen;
 }
-div#products {
+
+#products {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 /* grid */
@@ -48,6 +49,7 @@ section {
   /* padding: 3px; */
 }
 
+x
 header {
   grid-column: span 12;
   grid-row: span 2;
