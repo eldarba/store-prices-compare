@@ -5,10 +5,7 @@ function addProduct() {
     let div = document.createElement("div")
     div.appendChild(document.createElement("hr"))
     // Create and append price label and input elements
-    var priceLabel = document.createElement("label");
-    priceLabel.setAttribute("for", "in-price-" + nextProduct);
-    priceLabel.textContent = "מחיר בשקלים";
-    div.appendChild(priceLabel);
+    
 
     var priceInput = document.createElement("input");
     priceInput.setAttribute("id", "in-price-" + nextProduct);
@@ -22,11 +19,7 @@ function addProduct() {
     div.appendChild(document.createElement("br"));
 
     // Create and append weight label and input elements
-    var weightLabel = document.createElement("label");
-    weightLabel.setAttribute("for", "in-weight-" + nextProduct);
-    weightLabel.textContent = "משקל בגרם";
-    div.appendChild(weightLabel);
-
+   
     var weightInput = document.createElement("input");
     weightInput.setAttribute("id", "in-weight-" + nextProduct);
     weightInput.setAttribute("type", "number");
